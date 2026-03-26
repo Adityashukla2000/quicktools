@@ -4,12 +4,9 @@ import '../features/image_converter/ui/image_converter_screen.dart';
 
 final router = GoRouter(
   routes: [
+    GoRoute(path: '/', builder: (context, state) => const HomeScreen()),
     GoRoute(
-      path: '/',
-      builder: (context, state) => const HomeScreen(),
-    ),
-    GoRoute(
-      path: '/image',
+      path: '/imageCompressor',
       builder: (context, state) => const ImageConverterScreen(),
     ),
   ],

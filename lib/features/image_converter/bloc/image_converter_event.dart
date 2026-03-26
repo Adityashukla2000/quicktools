@@ -4,5 +4,7 @@ abstract class ImageConverterEvent {}
 
 class ConvertImage extends ImageConverterEvent {
   final Uint8List bytes;
-  ConvertImage(this.bytes);
+  final int targetKB;
+
+  ConvertImage(this.bytes, this.targetKB);
 }
