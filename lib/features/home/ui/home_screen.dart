@@ -393,8 +393,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ..._visibleCategories.map(
                       (cat) => _CategorySection(category: cat, isDark: isDark),
                     ),
-                    _buildFooterBanner(isDark),
-                    const SizedBox(height: 40),
+                    // _buildFooterBanner(isDark),
+                    const SizedBox(height: 20),
                   ],
                 ],
               ),
@@ -437,7 +437,7 @@ class _HomeScreenState extends State<HomeScreen> {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: 'Tool',
+                  text: 'Quick',
                   style: TextStyle(
                     fontSize: 19,
                     fontWeight: FontWeight.w900,
@@ -448,7 +448,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 const TextSpan(
-                  text: 'Verse',
+                  text: 'Tools',
                   style: TextStyle(
                     fontSize: 19,
                     fontWeight: FontWeight.w900,
@@ -462,35 +462,35 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       actions: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-          margin: const EdgeInsets.only(right: 6),
-          decoration: BoxDecoration(
-            color: const Color(0xFFFEF3C7),
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: const Color(0xFFFCD34D), width: 0.5),
-          ),
-          child: const Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                Icons.workspace_premium_rounded,
-                size: 12,
-                color: Color(0xFFD97706),
-              ),
-              SizedBox(width: 3),
-              Text(
-                'PRO',
-                style: TextStyle(
-                  fontSize: 11,
-                  fontWeight: FontWeight.w800,
-                  color: Color(0xFFD97706),
-                  letterSpacing: 0.5,
-                ),
-              ),
-            ],
-          ),
-        ),
+        // Container(
+        //   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        //   margin: const EdgeInsets.only(right: 6),
+        //   decoration: BoxDecoration(
+        //     color: const Color(0xFFFEF3C7),
+        //     borderRadius: BorderRadius.circular(20),
+        //     border: Border.all(color: const Color(0xFFFCD34D), width: 0.5),
+        //   ),
+        //   child: const Row(
+        //     mainAxisSize: MainAxisSize.min,
+        //     children: [
+        //       Icon(
+        //         Icons.workspace_premium_rounded,
+        //         size: 12,
+        //         color: Color(0xFFD97706),
+        //       ),
+        //       SizedBox(width: 3),
+        //       Text(
+        //         'PRO',
+        //         style: TextStyle(
+        //           fontSize: 11,
+        //           fontWeight: FontWeight.w800,
+        //           color: Color(0xFFD97706),
+        //           letterSpacing: 0.5,
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ),
         GestureDetector(
           onTap: () => context.read<ThemeCubit>().toggle(),
           child: Container(
@@ -559,7 +559,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(width: 5),
                 const Text(
-                  '100+ Free Tools — No Sign Up Required',
+                  '30+ Free Tools — No Sign Up Required',
                   style: TextStyle(
                     fontSize: 11.5,
                     fontWeight: FontWeight.w600,
@@ -639,7 +639,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           : AppColors.textPrimLight,
                     ),
                     decoration: InputDecoration(
-                      hintText: 'Search 100+ tools...',
+                      hintText: 'Search 30+ tools...',
                       hintStyle: TextStyle(
                         fontSize: 14,
                         color: isDark
@@ -685,16 +685,16 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: 18),
 
           // Stats
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _StatItem(value: '100+', label: 'Free Tools', isDark: isDark),
-              _Divider(isDark: isDark),
-              _StatItem(value: '10M+', label: 'Users', isDark: isDark),
-              _Divider(isDark: isDark),
-              _StatItem(value: '0', label: 'Sign Ups Needed', isDark: isDark),
-            ],
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [
+          //     _StatItem(value: '100+', label: 'Free Tools', isDark: isDark),
+          //     _Divider(isDark: isDark),
+          //     _StatItem(value: '10M+', label: 'Users', isDark: isDark),
+          //     _Divider(isDark: isDark),
+          //     _StatItem(value: '0', label: 'Sign Ups Needed', isDark: isDark),
+          //   ],
+          // ),
         ],
       ),
     );
@@ -1036,19 +1036,20 @@ class _CategorySection extends StatelessWidget {
                   ],
                 ),
               ),
-              GestureDetector(
-                onTap: () {},
-                child: Text(
-                  'See all →',
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                    color: category.accentColor,
-                  ),
-                ),
-              ),
+              // GestureDetector(
+              //   onTap: () {},
+              //   child: Text(
+              //     'See all →',
+              //     style: TextStyle(
+              //       fontSize: 12,
+              //       fontWeight: FontWeight.w600,
+              //       color: category.accentColor,
+              //     ),
+              //   ),
+              // ),
             ],
           ),
+
           const SizedBox(height: 12),
           GridView.builder(
             shrinkWrap: true,
@@ -1075,7 +1076,7 @@ class _CategorySection extends StatelessWidget {
   }
 }
 
-// ─── Tool Card ─────────────────────────────────────────────────────────────────
+// ─── Tool Card ─────────────────────────────────────────────────────────────
 class _ToolCard extends StatefulWidget {
   final ToolItem tool;
   final bool isDark;
