@@ -10,24 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ✅ 1. Checkout code
+      # ✅ Checkout
       - uses: actions/checkout@v4
 
-      # ✅ 2. Install Flutter (MOST IMPORTANT)
+      # ✅ Setup Flutter (FIXED)
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: stable
+          channel: stable
 
-      # ✅ 3. Get dependencies
+      # ✅ Dependencies
       - name: Install Dependencies
         run: flutter pub get
 
-      # ✅ 4. Build web
+      # ✅ Build Web
       - name: Build Flutter Web
         run: flutter build web
 
-      # ✅ 5. Deploy to Firebase
+      # ✅ Deploy
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
