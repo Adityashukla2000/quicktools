@@ -1,7 +1,6 @@
 // ─── Tool Data ────────────────────────────────────────────────────────────────
 import 'package:flutter/material.dart';
 import 'package:quicktools/app/theme.dart';
-import 'package:quicktools/features/home/bloc/toolmodel.dart';
 
 import '../model/toolItemmodel.dart';
 import '../model/toolcategorymodel.dart';
@@ -90,6 +89,7 @@ final List<ToolCategoryModel> toolCategories = [
         tagline: 'Edit dimensions freely',
         icon: Icons.crop_rounded,
         color: AppColors.sky,
+        route: "/imageCropper",
       ),
       ToolItemModel(
         title: 'Favicon Generator',

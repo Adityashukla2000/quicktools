@@ -90,23 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
       toolbarHeight: 58,
       title: Row(
         children: [
-          Container(
-            width: 30,
-            height: 30,
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [AppColors.indigo, AppColors.violet],
-              ),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: const Icon(
-              Icons.bolt_rounded,
-              color: Colors.white,
-              size: 17,
-            ),
-          ),
+          Image.asset('assets/logo/logo.png', width: 28, height: 28),
           const SizedBox(width: 8),
           RichText(
             text: TextSpan(

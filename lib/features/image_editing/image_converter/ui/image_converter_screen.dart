@@ -7,8 +7,8 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'dart:html' as html;
 
-import '../../../app/app.dart';
-import '../../utils/extension.dart';
+import '../../../../app/app.dart';
+import '../../../utils/extension.dart';
 import '../bloc/image_converter_bloc.dart';
 import '../bloc/image_converter_event.dart';
 import '../bloc/image_converter_state.dart';
