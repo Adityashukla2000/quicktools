@@ -51,8 +51,11 @@ class _ToolCardState extends State<ToolCardWidget>
       onTapDown: (_) => _ctrl.forward(),
       onTapUp: (_) {
         _ctrl.reverse();
+
         HapticFeedback.lightImpact();
+
         widget.onTap?.call();
+
         context.push(widget.tool.route);
       },
       onTapCancel: () => _ctrl.reverse(),

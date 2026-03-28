@@ -69,7 +69,7 @@ final List<ToolCategoryModel> toolCategories = [
         tagline: 'Convert any format',
         icon: Icons.transform_rounded,
         color: AppColors.skyDark,
-        route: '/image',
+        route: '/imageFormatter',
       ),
       ToolItemModel(
         title: 'Reverse Image Search',
