@@ -64,13 +64,15 @@ final List<ToolCategoryModel> toolCategories = [
         color: AppColors.sky,
         route: "/imageCompressor",
       ),
+
       ToolItemModel(
         title: 'Image Converter',
         tagline: 'Convert any format',
         icon: Icons.transform_rounded,
         color: AppColors.skyDark,
-        route: '/imageFormatter',
+        route: "/imageFormatter",
       ),
+
       ToolItemModel(
         title: 'Reverse Image Search',
         tagline: 'Find image sources',
