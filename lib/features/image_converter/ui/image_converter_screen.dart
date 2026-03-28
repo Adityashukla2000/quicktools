@@ -1,13 +1,14 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
-import 'dart:typed_data';
 import 'dart:html' as html;
 
 import '../../../app/app.dart';
+import '../../utils/extension.dart';
 import '../bloc/image_converter_bloc.dart';
 import '../bloc/image_converter_event.dart';
 import '../bloc/image_converter_state.dart';
@@ -71,7 +72,7 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
             onPressed: () => Navigator.pop(context),
           ),
           title: Text(
-            "Image Optimizer",
+            "Image Compressor",
             style: GoogleFonts.poppins(
               color: textColor,
               fontWeight: FontWeight.bold,
@@ -214,6 +215,12 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
   }
 
   Widget _buildSettingsRow(bool isDark, Color textColor) {
+    // Use kIsWeb directly to avoid the getter error
+    final availableFormats = CompressFormat.values.where((f) {
+      if (kIsWeb && f == CompressFormat.heic) return false;
+      return true;
+    }).toList();
+
     return Row(
       children: [
         Expanded(
@@ -233,7 +240,7 @@ class _ImageConverterScreenState extends State<ImageConverterScreen> {
           child: _buildDropdown<CompressFormat>(
             "Format",
             selectedFormat,
-            CompressFormat.values
+            availableFormats
                 .map(
                   (f) => DropdownMenuItem(
                     value: f,

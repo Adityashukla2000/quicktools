@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quicktools/app/app.dart';
 import 'package:quicktools/app/theme.dart';
-import 'package:quicktools/features/home/bloc/toolmodel.dart';
 import 'package:quicktools/features/home/ui/model/toolcategorymodel.dart';
 import 'package:quicktools/features/home/ui/widgets/toolcard.dart';
 
